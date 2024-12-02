@@ -1,0 +1,22 @@
+h1{
+    color: maroon
+
+}
+
+.post{
+    background-color: rgb(248, 170, 170);
+    padding-bottom: 1rem;
+    height: 10rem;
+}
+
+.user{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: larger;
+    margin-left: 10px;
+    
+}
+
+.content{
+    margin-left: 10px;
+}

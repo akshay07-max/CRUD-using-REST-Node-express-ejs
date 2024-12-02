@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+<body>
+    <h1>Edit Your Post</h1>
+    <p>Post id: <%= post.id %> </p><br>
+    <p>Post Username: <%= post.username %> </p><br>
+
+    <!-- Method Override is used in this from, package of npm, used to override methods -->
+     <!-- As we know, we can only use GET and POST req in html forms, it basically changes or overrides them, such as making PUT to DELETE etc. -->
+      <!-- client send the req, servers sends the res -->
+    <form action="">
+        <textarea rows="10" cols="30" name="content" id="" placeholder=""><%= post.content %></textarea>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
