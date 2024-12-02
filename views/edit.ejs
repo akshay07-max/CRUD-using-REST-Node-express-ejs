@@ -13,7 +13,7 @@
     <!-- Method Override is used in this from, package of npm, used to override methods -->
      <!-- As we know, we can only use GET and POST req in html forms, it basically changes or overrides them, such as making PUT to DELETE etc. -->
       <!-- client send the req, servers sends the res -->
-    <form action="">
+    <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
         <textarea rows="10" cols="30" name="content" id="" placeholder=""><%= post.content %></textarea>
         <button>Submit</button>
     </form>

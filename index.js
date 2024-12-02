@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const path = require("path"); // view ejs file locations.
 const { v4: uuidv4 } = require("uuid"); // To create unique id
+const methodOverride = require("method-override")
 
 app.use(express.urlencoded({ extended: true })); // Express can understand URL encoded data.
+
+app.use(methodOverride("_method")) // Explanation in edit.ejs
 
 app.set("view engin", "ejs"); // View engine for ejs
 app.set("views", path.join(__dirname, "views"));
@@ -70,7 +73,7 @@ app.patch('/posts/:id', (req, res)=>{
     let post = posts.find((p) => id === p.id);
     post.content = newContent;
     console.log(post);
-    res.send("The update is working");
+    res.redirect("/posts");
 })
 
 // Get request to get a form for edit the post.
@@ -78,6 +81,13 @@ app.get("/posts/:id/edit", (req, res)=>{
     let {id} = req.params;
     let post = posts.find((p) => id === p.id);
     res.render("edit.ejs", {post});
+})
+
+// Delete Operation
+app.delete("/posts/:id",(req, res)=>{
+    let {id} = req.params;
+    posts = posts.filter((p) => id !== p.id);
+    res.redirect("/posts");
 })
 
 // App listen on Port.
